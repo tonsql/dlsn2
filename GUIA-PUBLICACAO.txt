@@ -1,0 +1,54 @@
+DLSN IMPORTS — GUIA RÁPIDO DE PUBLICAÇÃO
+========================================
+
+1) TESTE LOCAL
+- Abra ABRIR_SITE.bat.
+- Se tiver Node.js ou Python instalado, use o servidor local.
+- A página inicial fica em http://localhost:8000 (quando o servidor usar essa porta).
+
+2) SUPABASE — BANCO + LOGIN/CADASTRO + ADMIN
+- Crie um projeto em https://supabase.com
+- Abra SQL Editor > New query.
+- Cole e execute o arquivo: supabase/setup.sql
+- Em Project Settings/API copie:
+  a) Project URL
+  b) Publishable key ou anon key (chave pública)
+- Abra assets/js/config.js e preencha:
+  SUPABASE_URL: 'SUA_URL'
+  SUPABASE_ANON_KEY: 'SUA_CHAVE_PUBLICA'
+- NUNCA coloque service_role no site.
+- Crie sua conta pelo botão de usuário da loja.
+- No SQL Editor rode a linha abaixo trocando seu e-mail:
+  update public.profiles set role='admin' where user_id=(select id from auth.users where email='SEU_EMAIL');
+- Depois abra /admin.html e entre com o mesmo e-mail e senha.
+
+3) SUPABASE — URL DE PRODUÇÃO
+- Authentication > URL Configuration.
+- Site URL: coloque a URL final do seu site, por exemplo https://sualoja.pages.dev
+- Adicione também sua URL final em Redirect URLs.
+
+4) CLOUDFLARE PAGES — FORMA MAIS FÁCIL
+- Entre no painel Cloudflare.
+- Workers & Pages > Create > Pages > Direct Upload.
+- Crie o projeto e envie TODO O CONTEÚDO desta pasta (index.html deve ficar na raiz do upload).
+- Ao finalizar você recebe uma URL *.pages.dev.
+- Se usar domínio próprio, abra Custom domains dentro do projeto Pages e conecte o domínio.
+
+5) CLOUDFLARE TURNSTILE NO LOGIN/CADASTRO
+- Cloudflare > Turnstile > Add widget.
+- Adicione o domínio da loja e crie o widget (Managed é uma boa opção geral).
+- Copie a SITE KEY para assets/js/config.js em TURNSTILE_SITE_KEY.
+- Copie a SECRET KEY SOMENTE para o Supabase:
+  Supabase > Authentication > Bot and Abuse Protection > Enable CAPTCHA protection
+  Provider: Cloudflare Turnstile
+  Secret: sua SECRET KEY
+- Nunca coloque a SECRET KEY em config.js.
+
+6) PAINEL ADMIN
+- O site público NÃO possui link para o admin.
+- O endereço continua sendo /admin.html para a equipe.
+- Esconder a URL não é segurança. A proteção real é o login Supabase + role=admin + RLS do setup.sql.
+
+7) IMPORTANTE
+- Antes de publicar de verdade, preencha o Supabase em assets/js/config.js.
+- Sem Supabase, o site usa dados locais apenas para teste no navegador.

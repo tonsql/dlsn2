@@ -1,0 +1,47 @@
+DLSN IMPORTS V12
+
+ADMIN LOCAL
+Usuário: admin
+Senha: dlsn1997
+
+O login acima funciona somente no computador/local para testes.
+Quando o Supabase estiver configurado e o site estiver publicado, o Admin usa a conta real do Supabase.
+
+PREÇOS CONFIGURADOS
+Air Max TN: de R$ 389,99 por R$ 359,99
+Air Max TN7: de R$ 399,99 por R$ 369,99
+Air Max 95: de R$ 429,99 por R$ 389,99
+NOCTA Glide: de R$ 439,99 por R$ 399,99
+ASICS GEL-NYC: de R$ 449,99 por R$ 419,99
+Shox R4: de R$ 279,99 por R$ 240,00
+Nike Mind 001: de R$ 279,99 por R$ 240,00
+Alexander McQueen: de R$ 399,99 por R$ 370,00
+Puma: de R$ 389,99 por R$ 360,00
+Tommy Hilfiger: de R$ 389,99 por R$ 360,00
+Mizuno Prophecy 1: de R$ 489,99 por R$ 470,00
+Mizuno Prophecy 13: de R$ 499,99 por R$ 480,00
+Mizuno Prophecy 14: de R$ 529,99 por R$ 490,00
+Mizuno Prophecy 15: de R$ 559,99 por R$ 520,00
+
+CATÁLOGO
+74 produtos.
+Todos com estoque 1997.
+Todos com tamanhos 38 ao 44.
+
+BAT
+Dê dois cliques em ABRIR_SITE.bat e escolha uma opção do menu.
+
+O site mantém:
+- logo DLSN girando 360 graus;
+- compra pelo WhatsApp;
+- avaliações preparadas para Supabase;
+- carrossel de produtos na página inicial;
+- cards das coleções;
+- barra de benefícios;
+- Mais vendidos e Promoções vazios;
+- compartilhamento com logo DLSN;
+- Admin com Produtos, Avaliações, Ajustes e estatísticas.
+
+- Menu de Marcas/Categorias reconstruído em desktop e celular.
+- Ícones/logos de marcas adicionados.
+- Cards de produto refeitos no estilo da referência enviada.
