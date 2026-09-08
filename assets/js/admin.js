@@ -3,7 +3,7 @@ const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelect
 const client=window.dlsnSupabase;
 const isLocal=['localhost','127.0.0.1',''].includes(location.hostname);
 const LOCAL_USER='admin', LOCAL_PASS='dlsn1997';
-let mode=(isLocal&&!client)?'local':'supabase', products=[],reviews=[],settings={},user=null;
+let mode=(!client)?'local':'supabase';', products=[],reviews=[],settings={},user=null;
 const base=window.DLSN_PRODUCTS||[];
 const money=v=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(Number(v||0));
 const slug=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
